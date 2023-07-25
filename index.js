@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 dotenv.config();
 
-const PORT = 8000;
+const PORT = 80000;
 
 const app = express();
 
@@ -26,5 +26,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(router);
 
 app.listen(PORT, async () => {
-    console.log(`server up on port ${PORT}`);
+    // console.log(`server up on port ${PORT}`);
+    console.log("server connected");
 });
