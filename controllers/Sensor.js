@@ -8,15 +8,21 @@ const getSensors = (req, res) => {
 const addSensorval = (req, res) => {
 
     const sensor = new Sensor({
-        title: req.body.title,
-        value: req.body.value,
+        water_level: req.body.water_level,
+        moisture_level: req.body.moisture_level,
+        rain_level: req.body.rain_level,
     });
     sensor.save().then(() =>
-        res.send(200)
-    ).then((err) =>
-        console.log(err));
+        res.status(200).json({
+            success: true,
+            data: sensor
+        })
+    ).then((err) => console.log());
 
 };
+const deleteSense = (req, res) => {
+
+}
 
 module.exports = {
     getSensors,
