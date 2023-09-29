@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 dotenv.config();
 
-const PORT = process.env.PORT || 80000;
+const PORT = process.env.PORT || 8000;
 
 const app = express();
 
@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGODB_URL, {
 app.use(cors());
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(router);
 
 app.listen(PORT, async () => {
